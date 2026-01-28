@@ -71,3 +71,4 @@ pnpm test:e2e --debug
 ```sh
 pnpm lint
 ```
+UI based on a proprietary design. Design files and assets are not included.
