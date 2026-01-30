@@ -3,74 +3,74 @@
 /* Inter */
 @font-face {
   font-family: 'Inter';
-  src: url('@assets/fonts/inter/Inter_Light.ttf') format('truetype');
+  src: url('/assets/fonts/inter/Inter_Light.ttf') format('truetype');
   font-weight: 300;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('@assets/fonts/inter/Inter_Regular.ttf') format('truetype');
+  src: url('/assets/fonts/inter/Inter_Regular.ttf') format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('@assets/fonts/inter/Inter_Medium.ttf') format('truetype');
+  src: url('/assets/fonts/inter/Inter_Medium.ttf') format('truetype');
   font-weight: 500;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('@assets/fonts/inter/Inter_SemiBold.ttf') format('truetype');
+  src: url('/assets/fonts/inter/Inter_SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 @font-face {
   font-family: 'Inter';
-  src: url('@assets/fonts/inter/Inter_Bold.ttf') format('truetype');
+  src: url('/assets/fonts/inter/Inter_Bold.ttf') format('truetype');
   font-weight: 700;
 }
 
 /* Poppins */
 @font-face {
   font-family: 'Poppins';
-  src: url('@assets/fonts/poppins/Poppins-Light.ttf') format('truetype');
+  src: url('/assets/fonts/poppins/Poppins-Light.ttf') format('truetype');
   font-weight: 300;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('@assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/poppins/Poppins-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: 'Poppins';
-  src: url('@assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+  src: url('/assets/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 /* Spectral */
 @font-face {
   font-family: 'Spectral';
-  src: url('@assets/fonts/spectral/Spectral-Light.ttf') format('truetype');
+  src: url('/assets/fonts/spectral/Spectral-Light.ttf') format('truetype');
   font-weight: 300;
 }
 @font-face {
   font-family: 'Spectral';
-  src: url('@assets/fonts/spectral/Spectral-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/spectral/Spectral-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 @font-face {
   font-family: 'Spectral';
-  src: url('@assets/fonts/spectral/Spectral-SemiBold.ttf') format('truetype');
+  src: url('/assets/fonts/spectral/Spectral-SemiBold.ttf') format('truetype');
   font-weight: 600;
 }
 
 /* Brygada-1918 */
 @font-face {
   font-family: 'Brygada-1918';
-  src: url('@assets/fonts/brygada-1918/Brygada1918-Italic.ttf') format('truetype');
+  src: url('/assets/fonts/brygada-1918/Brygada1918-Italic.ttf') format('truetype');
   font-style: italic;
   font-weight: 400;
 }
 @font-face {
   font-family: 'Brygada-1918';
-  src: url('@assets/fonts/brygada-1918/Brygada1918-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/brygada-1918/Brygada1918-Regular.ttf') format('truetype');
   font-weight: 400;
 }
 
