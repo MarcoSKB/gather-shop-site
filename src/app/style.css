@@ -75,44 +75,21 @@
 }
 
 :root {
-  --color-bg-primary: #25292b;
-  --color-bg-secondary: #3c4144;
-
-  --color-surface-primary: #3c4144;
-  --color-surface-secondary: #6f747e;
-
-  --color-text-primary: #f0ece5;
-  --color-text-secondary: #b6bbc4;
-  --color-text-tertiary: #6f747e;
-
-  --color-border-primary: #3c4144;
-  --color-border-secondary: #6f747e;
-
-  --color-disabled: #6f747e;
-  --color-divider: #3c4144;
+  --color-text-primary: #000000;
+  --color-text-secondary: #4d4d4d;
+  --color-text-inverse: #ffffff;
 }
 
 :root[data-theme='dark'] {
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #dddddd;
-
-  --color-surface-primary: #ffffff;
-  --color-surface-secondary: #dddddd;
-
-  --color-text-primary: #000000;
-  --color-text-secondary: #4d4d4d;
-  --color-text-tertiary: #6a6a6a;
-
-  --color-border-primary: #dddddd;
-  --color-border-secondary: #6a6a6a;
-
-  --color-disabled: #dddddd;
-  --color-divider: #dddddd;
+  --color-text-primary: #f0ece5;
+  --color-text-secondary: #b6bbc4;
+  --color-text-inverse: #25292b;
 }
 
 @theme {
   --color-primary: var(--color-text-primary);
   --color-secondary: var(--color-text-secondary);
+  --color-inverse: var(--color-text-inverse);
 
   --font-inter: 'Inter', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
@@ -124,4 +101,8 @@
   --text-md: 16px;
   --text-sm: 13px;
   --text-xs: 11px;
+}
+
+body {
+  font-family: var(--font-inter);
 }
