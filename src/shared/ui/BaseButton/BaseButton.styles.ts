@@ -1,4 +1,4 @@
-import { cva } from 'class-variance-authority'
+import { cva, type VariantProps } from 'class-variance-authority'
 
 export const buttonStyles = cva(
   'font-poppins box-border flex w-full cursor-pointer items-center justify-center text-base tracking-[2%] transition-colors duration-250 ease-in disabled:cursor-default',
@@ -18,3 +18,5 @@ export const buttonStyles = cva(
     defaultVariants: { variant: 'primary', size: 'md' },
   },
 )
+
+export type ButtonVariantsType = VariantProps<typeof buttonStyles>

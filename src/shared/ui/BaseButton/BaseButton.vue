@@ -1,20 +1,16 @@
 <script setup lang="ts">
 import type { ButtonHTMLAttributes } from 'vue'
-import { buttonStyles } from './BaseButton.styles'
+import { buttonStyles, type ButtonVariantsType } from './BaseButton.styles'
 
-const props = withDefaults(
-  defineProps<
-    {
-      variant?: 'primary' | 'secondary'
-      size?: 'md' | 'lg'
-    } & /* @vue-ignore */ ButtonHTMLAttributes
-  >(),
-  {
-    type: 'button',
-    variant: 'secondary',
-    size: 'md',
-  },
-)
+type Props = {
+  type?: ButtonHTMLAttributes['type']
+  variant?: ButtonVariantsType['variant']
+  size?: ButtonVariantsType['size']
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  type: 'button',
+})
 
 const { variant, size, ...buttonProps } = props
 </script>
