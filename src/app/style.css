@@ -95,14 +95,10 @@
   --font-poppins: 'Poppins', sans-serif;
   --font-spectral: 'Spectral', sans-serif;
   --font-brygada: 'Brygada-1918', sans-serif;
-
-  --text-xl: 38px;
-  --text-lg: 18px;
-  --text-md: 16px;
-  --text-sm: 13px;
-  --text-xs: 11px;
 }
 
 body {
   font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
