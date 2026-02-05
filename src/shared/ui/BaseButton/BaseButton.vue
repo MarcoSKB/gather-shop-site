@@ -4,6 +4,7 @@ import { computed, type ButtonHTMLAttributes } from 'vue'
 import { buttonStyles, type ButtonVariantsType } from './BaseButton.styles'
 
 type Props = {
+  class?: string
   type?: ButtonHTMLAttributes['type']
   variant?: ButtonVariantsType['variant']
   size?: ButtonVariantsType['size']
