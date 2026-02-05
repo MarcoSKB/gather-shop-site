@@ -101,6 +101,16 @@
   --font-brygada: 'Brygada-1918', sans-serif;
 }
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
 body {
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
