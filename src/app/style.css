@@ -87,6 +87,10 @@
 }
 
 @theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
   --color-primary: var(--color-text-primary);
   --color-secondary: var(--color-text-secondary);
   --color-inverse: var(--color-text-inverse);
