@@ -5,9 +5,9 @@ import { RouterLink } from '@/src/shared/ui/RouterLink'
 
 <template>
   <footer>
-    <BaseContainer class="gap-5 pb-6">
+    <BaseContainer class="gap-2 pb-6 md:gap-5">
       <hr class="bg-primary h-0.5" />
-      <div class="flex items-center justify-between gap-1.5">
+      <div class="flex flex-col-reverse items-center justify-between gap-2 md:flex-row md:gap-1.5">
         <span>© 2026 Elmore</span>
         <div class="flex items-center gap-6">
           <a
@@ -18,9 +18,9 @@ import { RouterLink } from '@/src/shared/ui/RouterLink'
           >
           <a
             target="_blank"
-            href="https://www.twitter.com"
+            href="https://x.com/"
             class="font-spectral text-primary text-xl transition-opacity duration-200 ease-in hover:opacity-60"
-            >Twitter</a
+            >X</a
           >
           <a
             target="_blank"
