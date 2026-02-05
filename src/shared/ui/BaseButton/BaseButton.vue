@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type { ButtonHTMLAttributes } from 'vue'
+import { clsx } from 'clsx'
+import { computed, type ButtonHTMLAttributes } from 'vue'
 import { buttonStyles, type ButtonVariantsType } from './BaseButton.styles'
 
 type Props = {
@@ -13,10 +14,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { variant, size, ...buttonProps } = props
+const buttonClasses = computed(() => clsx(buttonStyles({ variant, size }), props.class))
 </script>
 
 <template>
-  <button v-bind="buttonProps" :class="buttonStyles({ variant, size })">
+  <button v-bind="buttonProps" :class="buttonClasses">
     <slot />
   </button>
 </template>
