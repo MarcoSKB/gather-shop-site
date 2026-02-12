@@ -7,6 +7,8 @@ export const linkStyles = cva('text-nowrap aria-[current="page"]:pointer-events-
         'font-poppins text-primary before:bg-primary relative z-0 py-1.5 transition-opacity before:absolute before:bottom-2 before:left-0 before:h-px before:w-[0%] before:transition-all before:duration-300 before:content-[""] hover:before:w-full active:opacity-50 aria-[current="page"]:before:w-full',
       secondary:
         'font-spectral text-primary transition-opacity duration-150 ease-in hover:opacity-60',
+      tertiary:
+        'text-primary border-primary hover:bg-primary hover:text-inverse font-poppins box-border flex w-full cursor-pointer items-center justify-center border border-solid px-4 py-2 text-base tracking-[2%] transition-colors duration-250 ease-in disabled:cursor-default lg:px-6',
     },
     size: {
       md: 'text-base',
