@@ -25,11 +25,13 @@ import { storyList } from '../model/storyList.ts'
           </div>
         </div>
         <div class="w-full md:max-w-[60%] lg:max-w-1/2">
-          <ul class="flex flex-wrap justify-between gap-x-5 gap-y-16 md:gap-y-24 lg:gap-x-10">
+          <ul
+            class="flex flex-wrap justify-between gap-x-2 gap-y-16 sm:gap-x-5 md:gap-y-24 lg:gap-x-10"
+          >
             <li
               v-for="story in storyList"
               :key="story.id"
-              class="flex flex-[0_0_calc(50%-10px)] flex-col gap-3 lg:flex-[0_0_calc(50%-20px)]"
+              class="flex flex-[0_0_100%] flex-col gap-3 sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(50%-20px)]"
             >
               <VueRouterLink to="/stories/id">
                 <img
