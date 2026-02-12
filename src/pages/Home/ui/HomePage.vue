@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { BaseContainer } from '@/src/shared/ui/BaseContainer'
+import HeroSection from './HeroSection.vue'
+import StoriesSection from './StoriesSection.vue'
 </script>
 
 <template>
   <main class="min-h-full flex-1">
-    <BaseContainer>Home</BaseContainer>
+    <HeroSection />
+    <StoriesSection />
   </main>
 </template>
