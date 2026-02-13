@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import FilmsSection from './FilmsSection.vue'
 import HeroSection from './HeroSection.vue'
+import PosterSection from './PosterSection.vue'
 import StoriesSection from './StoriesSection.vue'
 </script>
 
@@ -9,5 +10,6 @@ import StoriesSection from './StoriesSection.vue'
     <HeroSection />
     <StoriesSection />
     <FilmsSection />
+    <PosterSection />
   </main>
 </template>
