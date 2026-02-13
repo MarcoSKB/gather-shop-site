@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { BaseLine } from '@shared/ui/BaseLine'
 import { HighlightSection } from '@widgets/HighlightSection'
 </script>
 
 <template>
-  <hr class="bg-primary mx-auto my-2.5 h-px w-full max-w-326" />
+  <BaseLine />
   <HighlightSection image="/assets/images/films-1.jpg" imageAlt="Thinking person">
     <template #subtitle> FILMS </template>
     <template #title>
