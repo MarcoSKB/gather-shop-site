@@ -1,0 +1,51 @@
+export const postsList = [
+  {
+    id: '1',
+    title: 'Amalie Smith',
+    subtitle: 'ARTS & CULTURE, ISSUE 49',
+    description: 'The Danish arts writer finding clarity between the lines.',
+    image: '/assets/images/post-5.jpg',
+    imageAlt: 'Dancing woman, sun rays in the background',
+  },
+  {
+    id: '2',
+    title: 'Ruben Östlund',
+    subtitle: 'FILMS, ISSUE 49',
+    description: 'Crude, contrary - and killing it: Meet the auteur of awkwardness.',
+    image: '/assets/images/post-2.jpg',
+    imageAlt: 'Esthetic pink architecture',
+  },
+  {
+    id: '3',
+    title: 'Tove Lo',
+    subtitle: 'MUSIC, ISSUE 49',
+    description: 'The pop star reflects on the big feelings behind her biggest hits.',
+    image: '/assets/images/post-3.jpg',
+    imageAlt: 'Woman standing on the ground with a suitcase',
+  },
+  {
+    id: '4',
+    title: 'Day in the Life: Stine Goya',
+    subtitle: 'FASHION, ISSUE 22',
+    description:
+      'Stine Goya has been a quiet presence in the fashion world for more than a decade - first as a model, then as an editor, now as a designer. ',
+    image: '/assets/images/post-4.jpg',
+    imageAlt: 'Black abstract painting',
+  },
+  {
+    id: '5',
+    title: 'Karin Mamma Andersson',
+    subtitle: 'ARTS & CULTURE, ISSUE 49',
+    description: 'Inside the moody, mysterious world of Sweden’s preeminent painter.',
+    image: '/assets/images/post-1.jpg',
+    imageAlt: 'Person sitting on a circle',
+  },
+  {
+    id: '6',
+    title: 'Fares Fares',
+    subtitle: 'FILMS, ISSUE 49',
+    description: 'After almost 25 years, the master actor steps behind the camera.',
+    image: '/assets/images/post-6.jpg',
+    imageAlt: 'The magazines are on the table',
+  },
+]

@@ -3,6 +3,7 @@ import FilmsSection from './FilmsSection.vue'
 import HeroSection from './HeroSection.vue'
 import IssueSection from './IssueSection.vue'
 import PosterSection from './PosterSection.vue'
+import PostsSection from './PostsSection.vue'
 import StoriesSection from './StoriesSection.vue'
 </script>
 
@@ -13,5 +14,6 @@ import StoriesSection from './StoriesSection.vue'
     <FilmsSection />
     <PosterSection />
     <IssueSection />
+    <PostsSection />
   </main>
 </template>
