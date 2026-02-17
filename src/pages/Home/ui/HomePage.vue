@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AccentSection from './AccentSection.vue'
 import AdsSection from './AdsSection.vue'
+import CollectionSection from './CollectionSection.vue'
 import FilmsSection from './FilmsSection.vue'
 import HeroSection from './HeroSection.vue'
 import IssueSection from './IssueSection.vue'
@@ -19,5 +20,6 @@ import StoriesSection from './StoriesSection.vue'
     <PostsSection />
     <AccentSection />
     <AdsSection />
+    <CollectionSection />
   </main>
 </template>
