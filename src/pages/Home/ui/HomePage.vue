@@ -9,6 +9,7 @@ import IssueSection from './IssueSection.vue'
 import PosterSection from './PosterSection.vue'
 import PostsSection from './PostsSection.vue'
 import StoriesSection from './StoriesSection.vue'
+import SubscribeFormSection from './SubscribeFormSection.vue'
 </script>
 
 <template>
@@ -23,5 +24,6 @@ import StoriesSection from './StoriesSection.vue'
     <AdsSection />
     <CollectionSection />
     <FashionSection />
+    <SubscribeFormSection />
   </main>
 </template>
