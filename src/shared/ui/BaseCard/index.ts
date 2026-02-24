@@ -1,1 +1,1 @@
-export { default as BaseCard } from './ui/BaseCard.vue'
+export { default as BaseCard } from './BaseCard.vue'
