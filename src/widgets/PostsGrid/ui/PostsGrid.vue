@@ -11,14 +11,7 @@ defineProps<{
 <template>
   <CollectionGrid :items="posts" :getKey="(post) => post.id">
     <template #default="{ item: post }">
-      <PostCard
-        :image="post.image"
-        :imageAlt="post.imageAlt"
-        :title="post.title"
-        :subtitle="post.subtitle"
-        :description="post.description"
-        :to="`/post/${post.id}`"
-      />
+      <PostCard :to="`/post/${post.id}`" :post="post" />
     </template>
   </CollectionGrid>
 </template>
