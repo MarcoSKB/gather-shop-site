@@ -1,1 +1,2 @@
-export { default as CartPage } from './ui/CartPage.vue'
+import CartPage from './ui/CartPage.vue'
+export default CartPage

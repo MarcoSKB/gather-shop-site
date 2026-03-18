@@ -1,5 +1,5 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Shop</div>
+  <section>ProductDetails</section>
 </template>

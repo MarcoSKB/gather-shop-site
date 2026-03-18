@@ -1,4 +1,4 @@
-import { HomePage } from '@pages/Home'
+import HomePage from '@pages/Home'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
@@ -8,23 +8,28 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/cart',
-    component: () => import('@pages/Cart').then((m) => m.CartPage),
+    name: 'cart',
+    component: () => import('@pages/Cart'),
   },
   {
-    path: '/post',
-    component: () => import('@pages/Post').then((m) => m.PostPage),
+    path: '/posts',
+    name: 'post-list',
+    component: () => import('@pages/PostList'),
   },
   {
-    path: '/product',
-    component: () => import('@pages/Product').then((m) => m.ProductPage),
-  },
-  {
-    path: '/reading',
-    component: () => import('@pages/Reading').then((m) => m.ReadingPage),
+    path: '/post/:slug',
+    name: 'post-details',
+    component: () => import('@pages/PostDetails'),
   },
   {
     path: '/shop',
-    component: () => import('@pages/Shop').then((m) => m.ShopPage),
+    name: 'product-list',
+    component: () => import('@pages/ProductList'),
+  },
+  {
+    path: '/shop/:slug',
+    name: 'product-details',
+    component: () => import('@pages/ProductDetails'),
   },
 ]
 
