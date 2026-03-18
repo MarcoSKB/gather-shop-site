@@ -1,4 +1,4 @@
-export const headerMenu = [
+export const menuLinks = [
   [
     { title: 'Design', href: '/design' },
     { title: 'Fashion', href: '/fashion' },

@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { BaseButton } from '@shared/ui/BaseButton'
-import { BaseContainer } from '@shared/ui/BaseContainer'
-import { ButtonIcon } from '@shared/ui/ButtonIcon'
-import { RouterLink } from '@shared/ui/RouterLink'
+import { BaseButton, BaseContainer, ButtonIcon, RouterLink } from '@shared/ui'
 import { X } from 'lucide-vue-next'
-import { headerMenu } from '../model/headerMenu'
+import { menuLinks } from '../model/menuLinks'
 
 defineProps<{
   onClose: () => void
@@ -29,7 +26,7 @@ const menuRef = defineModel<HTMLElement | null>('menuRef')
           <nav class="font-spectral flex w-full flex-col gap-5 text-2xl md:gap-8">
             <ul class="flex flex-col gap-0.5">
               <RouterLink
-                v-for="link in headerMenu[0]"
+                v-for="link in menuLinks[0]"
                 :key="link.href"
                 :to="link.href"
                 variant="secondary"
@@ -41,7 +38,7 @@ const menuRef = defineModel<HTMLElement | null>('menuRef')
             <hr />
             <ul class="flex flex-col gap-0.5">
               <RouterLink
-                v-for="link in headerMenu[1]"
+                v-for="link in menuLinks[1]"
                 :key="link.href"
                 :to="link.href"
                 variant="secondary"
