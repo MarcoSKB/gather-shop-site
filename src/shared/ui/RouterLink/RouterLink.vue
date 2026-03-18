@@ -1,15 +1,16 @@
 <script setup lang="ts">
 import clsx from 'clsx'
 import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, type RouterLinkProps } from 'vue-router'
 import { linkStyles, type LinkStylesType } from './RouterLink.styles'
 
-const props = defineProps<{
+interface Props extends RouterLinkProps {
   class?: string
   variant?: LinkStylesType['variant']
   size?: LinkStylesType['size']
-  to: string
-}>()
+}
+
+const props = defineProps<Props>()
 
 const linkClasses = computed(() =>
   clsx(linkStyles({ variant: props.variant, size: props.size }), props.class),
@@ -17,7 +18,7 @@ const linkClasses = computed(() =>
 </script>
 
 <template>
-  <RouterLink :to :class="linkClasses">
+  <RouterLink v-bind="props" :class="linkClasses">
     <slot />
   </RouterLink>
 </template>
