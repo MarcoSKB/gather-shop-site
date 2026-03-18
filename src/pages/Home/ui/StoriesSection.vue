@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui/BaseContainer'
-import { RouterLink } from '@shared/ui/RouterLink'
-import { RouterLink as VueRouterLink } from 'vue-router'
+import { BaseContainer, RouterLink } from '@shared/ui'
 import { storyList } from '../model/storyList.ts'
 </script>
 
@@ -33,13 +31,13 @@ import { storyList } from '../model/storyList.ts'
               :key="story.id"
               class="flex flex-[0_0_100%] flex-col gap-3 sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(50%-20px)]"
             >
-              <VueRouterLink to="/stories/id">
+              <RouterLink to="/stories/id" variant="plain">
                 <img
                   :src="story.image"
                   alt="Story preview"
                   class="h-86 w-full object-cover md:max-w-74"
                 />
-              </VueRouterLink>
+              </RouterLink>
               <span class="font-poppins text-xs leading-3.5 uppercase">{{ story.subtitle }}</span>
               <RouterLink
                 to="/stories/id"

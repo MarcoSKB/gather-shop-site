@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { BaseCheckbox } from '@shared/ui/BaseCheckbox'
-import { BaseContainer } from '@shared/ui/BaseContainer'
-import { BaseInput } from '@shared/ui/BaseInput'
+import { BaseCheckbox, BaseContainer, BaseInput } from '@shared/ui'
 </script>
 
 <template>

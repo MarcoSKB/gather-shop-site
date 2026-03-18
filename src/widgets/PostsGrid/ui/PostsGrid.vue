@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PostCard, type PreviewPost } from '@/src/entities/post'
-import { CollectionGrid } from '@shared/ui/CollectionGrid'
+import { CollectionGrid } from '@shared/ui'
 
 defineProps<{
   posts: PreviewPost[]

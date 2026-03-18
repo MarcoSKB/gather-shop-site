@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui/BaseContainer'
-import { BaseLine } from '@shared/ui/BaseLine'
+import { BaseContainer, BaseLine } from '@shared/ui'
 </script>
 
 <template>

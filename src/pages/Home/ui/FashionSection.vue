@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseLine } from '@shared/ui/BaseLine'
+import { BaseLine } from '@shared/ui'
 import { HighlightSection } from '@widgets/HighlightSection'
 </script>
 

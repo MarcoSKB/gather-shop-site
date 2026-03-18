@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui/BaseContainer'
-import { RouterLink } from '@shared/ui/RouterLink'
+import { BaseContainer, RouterLink } from '@shared/ui'
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/carousel.css'
 import { issueList } from '../model/issueList'

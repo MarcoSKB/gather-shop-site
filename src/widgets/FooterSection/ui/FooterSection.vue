@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@/src/shared/ui/BaseContainer'
-import { RouterLink } from '@/src/shared/ui/RouterLink'
+import { BaseContainer, RouterLink } from '@/src/shared/ui'
 </script>
 
 <template>
