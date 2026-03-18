@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { PreviewPost } from '@entities/post/model/types'
-import { PostCard } from '@entities/post/ui'
+import { PostCard, type PreviewPost } from '@/src/entities/post'
 import { CollectionGrid } from '@shared/ui/CollectionGrid'
 
 defineProps<{
