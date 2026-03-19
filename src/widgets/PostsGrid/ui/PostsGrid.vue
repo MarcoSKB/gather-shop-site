@@ -1,16 +1,23 @@
 <script setup lang="ts">
-import { PostCard, type PreviewPost } from '@/src/entities/post'
-import { CollectionGrid } from '@shared/ui'
+import { PostCard, usePostsList } from '@/src/entities/post'
+import { CollectionGrid, UiState } from '@shared/ui'
 
-defineProps<{
-  posts: PreviewPost[]
+const { params } = defineProps<{
+  params?: {
+    limit?: number
+    categoryId?: string
+  }
 }>()
+
+const { data: posts, uiStatus } = usePostsList(params)
 </script>
 
 <template>
-  <CollectionGrid :items="posts" :getKey="(post) => post.id">
-    <template #default="{ item: post }">
-      <PostCard :to="`/post/${post.id}`" :post="post" />
-    </template>
-  </CollectionGrid>
+  <UiState :status="uiStatus">
+    <CollectionGrid v-if="posts" :items="posts" :getKey="(post) => post.id">
+      <template #default="{ item: post }">
+        <PostCard :to="{ name: 'post-details', params: { slug: post.slug } }" :post="post" />
+      </template>
+    </CollectionGrid>
+  </UiState>
 </template>
