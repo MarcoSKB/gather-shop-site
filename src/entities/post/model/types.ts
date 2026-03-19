@@ -1,9 +1,8 @@
 export const BLOCK_TYPE = {
   TEXT: 'text',
   IMAGE: 'image',
-  QUOTE: 'quote',
-  GALLERY: 'gallery',
   HEADER: 'header',
+  EDITORIAL: 'editorial',
 } as const
 
 type BlockType = (typeof BLOCK_TYPE)[keyof typeof BLOCK_TYPE]
@@ -13,47 +12,43 @@ interface BaseBlock {
   type: BlockType
 }
 
-interface TextBlock extends BaseBlock {
-  type: BlockType
+export interface TextBlock extends BaseBlock {
+  type: typeof BLOCK_TYPE.TEXT
   data: {
-    html: string
-    dropCap?: boolean
+    type: 'paragraph' | 'heading' | 'quote'
+    content: string
   }
 }
 
-interface ImageBlock extends BaseBlock {
+export interface ImageBlock extends BaseBlock {
   type: typeof BLOCK_TYPE.IMAGE
   data: {
     url: string
+    variant: 'default' | 'small'
     caption?: string
-    aspectRatio?: '16/9' | '4/3' | 'original'
   }
 }
 
-interface QuoteBlock extends BaseBlock {
-  type: typeof BLOCK_TYPE.QUOTE
-  data: {
-    text: string
-    author?: string
-  }
-}
-
-interface HeaderBlock extends BaseBlock {
+export interface HeaderBlock extends BaseBlock {
   type: typeof BLOCK_TYPE.HEADER
   data: {
-    text: string
+    title: string
+    category: string
+    subtitle?: string
+    url: string
   }
 }
 
-interface GalleryBlock extends BaseBlock {
-  type: typeof BLOCK_TYPE.GALLERY
+export interface EditorialBlock extends BaseBlock {
+  type: typeof BLOCK_TYPE.EDITORIAL
   data: {
-    images: string[]
-    columns: number
+    left: ImageBlock
+    right: ImageBlock
+    center: Array<TextBlock>
   }
 }
 
-type PostBlock = TextBlock | ImageBlock | QuoteBlock | HeaderBlock | GalleryBlock
+export type PostBlock = TextBlock | ImageBlock | HeaderBlock | EditorialBlock
 
 export interface Post {
   id: string
@@ -66,11 +61,4 @@ export interface Post {
   blocks: PostBlock[]
 }
 
-export interface PreviewPost {
-  id: string
-  title: string
-  subtitle: string
-  description: string
-  image: string
-  imageAlt: string
-}
+export type PreviewPost = Omit<Post, 'blocks' | 'date'>
