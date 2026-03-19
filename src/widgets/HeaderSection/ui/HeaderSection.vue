@@ -17,7 +17,7 @@ const { isOpen, menuRef, toggle, close } = useHeaderMenu()
     <BaseContainer class="flex-row justify-between py-3 md:py-6">
       <div class="hidden w-full max-w-[33%] items-center gap-8 md:flex">
         <BaseButton variant="primary" class="hidden max-w-32 lg:flex">Subscribe</BaseButton>
-        <RouterLink :to="{ name: 'post-list' }">Posts</RouterLink>
+        <RouterLink :to="{ name: 'post-list' }">Stories</RouterLink>
         <RouterLink :to="{ name: 'product-list' }">Shop</RouterLink>
       </div>
       <RouterLink
