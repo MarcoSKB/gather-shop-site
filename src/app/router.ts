@@ -12,14 +12,19 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@pages/Cart'),
   },
   {
-    path: '/posts',
+    path: '/stories',
     name: 'post-list',
     component: () => import('@pages/PostList'),
   },
   {
-    path: '/post/:slug',
+    path: '/stories/:slug([a-z0-9-]+)',
     name: 'post-details',
+    props: true,
     component: () => import('@pages/PostDetails'),
+  },
+  {
+    path: '/stories/:pathMatch(.*)*',
+    redirect: { name: 'post-list' },
   },
   {
     path: '/shop',
@@ -27,8 +32,9 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@pages/ProductList'),
   },
   {
-    path: '/shop/:slug',
+    path: '/shop/:slug([a-z0-9-]+)',
     name: 'product-details',
+    props: true,
     component: () => import('@pages/ProductDetails'),
   },
 ]
