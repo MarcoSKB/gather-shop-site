@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/vue-query": "^5.92.10",
     "clsx": "^2.1.1",
     "gsap": "^3.14.2",
     "lucide-vue-next": "^0.563.0",
