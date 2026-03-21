@@ -1,1 +1,1 @@
-export { default as BaseLine } from './ui/BaseLine.vue'
+export { default as BaseLine } from './BaseLine.vue'
