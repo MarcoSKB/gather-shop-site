@@ -1,14 +1,11 @@
 import { useQuery } from '@tanstack/vue-query'
 import { computed, toValue } from 'vue'
-import { MOCK_POSTS } from '../model/mocks'
+import { getPost } from '../api'
 
 export const usePost = (slug: string) => {
   const query = useQuery({
     queryKey: ['post', slug],
-    queryFn: async () => {
-      await new Promise((resolve) => setTimeout(resolve, 5000))
-      return MOCK_POSTS.find((post) => post.slug === slug)
-    },
+    queryFn: () => getPost(slug),
     enabled: computed(() => {
       const s = toValue(slug)
       return !!s && s.length > 3
