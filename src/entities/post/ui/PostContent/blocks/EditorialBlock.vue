@@ -10,18 +10,24 @@ defineProps<{
 
 <template>
   <BaseContainer>
-    <section class="grid grid-cols-1 gap-8 py-16 md:grid-cols-[32fr_40fr_20fr] lg:gap-16 lg:py-24">
-      <aside class="sticky top-28 self-start">
+    <section
+      class="grid grid-cols-1 gap-8 py-16 md:grid-cols-[42.57fr_42.57fr_14.86fr] lg:gap-10 lg:py-18"
+    >
+      <aside
+        class="top-28 mx-auto w-1/2 min-w-72.5 self-start md:sticky md:mx-0 md:w-full md:min-w-auto"
+      >
         <ImageBlock :data="data.left.data" />
       </aside>
 
-      <main class="flex flex-col">
+      <main class="flex flex-col gap-5">
         <template v-for="item in data.center" :key="item.id">
           <TextBlock :data="item.data" />
         </template>
       </main>
 
-      <aside class="sticky top-28 self-start">
+      <aside
+        class="top-28 mx-auto w-1/2 min-w-72.5 self-start md:sticky md:mx-0 md:w-full md:min-w-auto"
+      >
         <ImageBlock :data="data.right.data" />
       </aside>
     </section>
