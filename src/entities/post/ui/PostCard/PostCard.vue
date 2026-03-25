@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { BaseCard } from '@shared/ui/BaseCard'
 import type { RouteLocationRaw } from 'vue-router'
-import type { PreviewPost } from '../model/types'
+import type { PreviewPost } from '../../model/types'
 
 defineProps<{
   to: RouteLocationRaw
