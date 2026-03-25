@@ -1,4 +1,5 @@
 export { default as EditorialBlock } from './EditorialBlock.vue'
 export { default as HeaderBlock } from './HeaderBlock.vue'
 export { default as ImageBlock } from './ImageBlock.vue'
+export { default as LineBlock } from './LineBlock.vue'
 export { default as TextBlock } from './TextBlock.vue'

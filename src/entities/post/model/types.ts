@@ -3,6 +3,7 @@ export const BLOCK_TYPE = {
   IMAGE: 'image',
   HEADER: 'header',
   EDITORIAL: 'editorial',
+  LINE: 'line',
 } as const
 
 type BlockType = (typeof BLOCK_TYPE)[keyof typeof BLOCK_TYPE]
@@ -10,6 +11,11 @@ type BlockType = (typeof BLOCK_TYPE)[keyof typeof BLOCK_TYPE]
 interface BaseBlock {
   id: string
   type: BlockType
+}
+
+export interface LineBlock extends BaseBlock {
+  type: typeof BLOCK_TYPE.LINE
+  data: null
 }
 
 export interface TextBlock extends BaseBlock {
@@ -48,7 +54,7 @@ export interface EditorialBlock extends BaseBlock {
   }
 }
 
-export type PostBlock = TextBlock | ImageBlock | HeaderBlock | EditorialBlock
+export type PostBlock = LineBlock | TextBlock | ImageBlock | HeaderBlock | EditorialBlock
 
 export interface Post {
   id: string

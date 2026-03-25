@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type Component } from 'vue'
 import { type PostBlock } from '../../model/types'
-import { EditorialBlock, HeaderBlock, ImageBlock, TextBlock } from './blocks'
+import { EditorialBlock, HeaderBlock, ImageBlock, LineBlock, TextBlock } from './blocks'
 
 defineProps<{
   blocks: PostBlock[]
@@ -12,11 +12,12 @@ const blockMap: Record<PostBlock['type'], Component> = {
   image: ImageBlock,
   header: HeaderBlock,
   editorial: EditorialBlock,
+  line: LineBlock,
 }
 </script>
 
 <template>
-  <article class="flex flex-col">
+  <article>
     <template v-for="block in blocks" :key="block.id">
       <component :is="blockMap[block.type]" :data="block.data" />
     </template>
