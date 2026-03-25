@@ -6,7 +6,7 @@ export const MOCK_POSTS: Post[] = [
     slug: 'kuniom-aekawa',
     title: 'KUNIOM AEKAWA',
     subtitle: 'A new exhibition at Kinfolk’s Case Study Room in Tokyo.',
-    category: 'ARTS & CULTURE, DESIGN',
+    category: 'CULTURE',
     date: '2026-03-10',
     cover: '/content/posts/kuniom-aekawa/cover.webp',
     blocks: [
@@ -189,6 +189,11 @@ export const MOCK_POSTS: Post[] = [
             },
           ],
         },
+      },
+      {
+        id: 'b19',
+        type: 'line',
+        data: null,
       },
     ],
   },
