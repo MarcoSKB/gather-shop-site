@@ -6,9 +6,10 @@ import { MOCK_POSTS } from '../model/mocks'
 export const usePostsList = ({
   limit = 6,
   categoryId,
-}: { limit?: number; categoryId?: string } = {}) => {
+  excludePostId,
+}: { limit?: number; categoryId?: string; excludePostId?: string } = {}) => {
   const query = useQuery({
-    queryKey: ['posts', { limit, categoryId }],
+    queryKey: ['posts', { limit, categoryId, excludePostId }],
     queryFn: async () => {
       await new Promise((resolve) => setTimeout(resolve, 5000))
 
@@ -18,6 +19,10 @@ export const usePostsList = ({
           (post) => post.category.toLowerCase() === categoryId.toLowerCase(),
         )
       }
+      if (excludePostId) {
+        filtered = filtered.filter((post) => post.id !== excludePostId)
+      }
+
       return filtered.slice(0, limit).map(mapToPreviewPost)
     },
     staleTime: 1000 * 60 * 5,
