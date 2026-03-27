@@ -4,7 +4,7 @@ export const MOCK_POSTS: Post[] = [
   {
     id: '1',
     slug: 'kuniom-aekawa',
-    title: 'KUNIOM AEKAWA',
+    title: 'Kuniom Aekawa',
     subtitle: 'A new exhibition at Kinfolk’s Case Study Room in Tokyo.',
     category: 'CULTURE',
     date: '2026-03-10',
