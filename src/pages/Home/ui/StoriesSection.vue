@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { BaseContainer, RouterLink } from '@shared/ui'
-import { storyList } from '../model/storyList.ts'
+import { usePostsList } from '@entities/post'
+import { BaseContainer, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
+const { data: storyList, uiStatus } = usePostsList({ limit: 6 })
 </script>
 
 <template>
@@ -26,33 +27,51 @@ import { storyList } from '../model/storyList.ts'
           <ul
             class="flex flex-wrap justify-between gap-x-2 gap-y-16 sm:gap-x-5 md:gap-y-24 lg:gap-x-10"
           >
-            <li
-              v-for="story in storyList"
-              :key="story.id"
-              class="flex flex-[0_0_100%] flex-col gap-3 sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(50%-20px)]"
-            >
-              <RouterLink to="/stories/id" variant="plain">
-                <img
-                  :src="story.image"
-                  alt="Story preview"
-                  class="h-86 w-full object-cover md:max-w-74"
-                />
-              </RouterLink>
-              <span class="font-poppins text-xs leading-3.5 uppercase">{{ story.subtitle }}</span>
-              <RouterLink
-                to="/stories/id"
-                variant="secondary"
-                size="lg"
-                class="leading-7 text-wrap"
+            <UiState :status="uiStatus">
+              <li
+                v-for="story in storyList"
+                :key="story.id"
+                class="flex flex-[0_0_100%] flex-col gap-3 sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(50%-20px)]"
               >
-                {{ story.title }}
-              </RouterLink>
-              <span class="font-spectral leading-6 opacity-75">{{ story.description }}</span>
-            </li>
+                <RouterLink
+                  :to="{ name: 'post-details', params: { slug: story.slug } }"
+                  variant="plain"
+                >
+                  <img
+                    :src="story.cover"
+                    alt="Story preview"
+                    class="h-86 w-full object-cover md:max-w-74"
+                  />
+                </RouterLink>
+                <span class="font-poppins text-xs leading-3.5 uppercase">{{ story.category }}</span>
+                <RouterLink
+                  :to="{ name: 'post-details', params: { slug: story.slug } }"
+                  variant="secondary"
+                  size="lg"
+                  class="leading-7 text-wrap"
+                >
+                  {{ story.title }}
+                </RouterLink>
+                <span class="font-spectral leading-6 opacity-75">{{ story.subtitle }}</span>
+              </li>
+
+              <template #loading>
+                <li
+                  v-for="item in 6"
+                  :key="item"
+                  class="flex flex-[0_0_100%] flex-col gap-3 sm:flex-[0_0_calc(50%-10px)] lg:flex-[0_0_calc(50%-20px)]"
+                >
+                  <BaseSkeleton class="h-86 md:max-w-74" />
+                  <BaseSkeleton class="h-3 max-w-[15%]" />
+                  <BaseSkeleton class="h-6 max-w-[70%]" />
+                  <BaseSkeleton class="h-8 w-full" />
+                </li>
+              </template>
+            </UiState>
           </ul>
         </div>
       </div>
-      <RouterLink to="/stories" variant="tertiary" class="mx-auto max-w-fit">
+      <RouterLink :to="{ name: 'post-list' }" variant="tertiary" class="mx-auto max-w-fit">
         All Stories
       </RouterLink>
     </BaseContainer>
