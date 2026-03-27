@@ -5,7 +5,7 @@ import { HighlightSection } from '@widgets/HighlightSection'
 
 <template>
   <BaseLine />
-  <HighlightSection image="/assets/images/films-1.jpg" imageAlt="Thinking person">
+  <HighlightSection image="/assets/images/films-1.webp" imageAlt="Thinking person">
     <template #subtitle> FILMS </template>
     <template #title>
       Ruben <br class="hidden sm:inline" />

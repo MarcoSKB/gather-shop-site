@@ -7,8 +7,8 @@ import { BaseContainer, BaseLine } from '@shared/ui'
   <section>
     <BaseContainer class="items-center gap-10 py-12 md:gap-18 md:py-20 lg:gap-22 lg:py-23">
       <div class="flex max-w-205.75 gap-2 md:gap-4 lg:gap-10">
-        <img src="/assets/images/accent-1.jpg" alt="White clothes" class="w-full" />
-        <img src="/assets/images/accent-2.jpg" alt="Washion" class="w-full" />
+        <img src="/assets/images/accent-1.webp" alt="White clothes" class="w-full" />
+        <img src="/assets/images/accent-2.webp" alt="Washion" class="w-full" />
       </div>
       <div class="flex flex-col gap-8 text-center md:gap-10 lg:gap-15">
         <span class="font-poppins text-xs leading-3.75 tracking-[10%] uppercase">
