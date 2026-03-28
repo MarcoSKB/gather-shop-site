@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PostCard, PostCardSkeleton, usePostsList } from '@/src/entities/post'
+import { PostCard, PostCardSkeleton, usePostsList } from '@entities/post'
 import { CollectionGrid, UiState } from '@shared/ui'
 import { computed } from 'vue'
 

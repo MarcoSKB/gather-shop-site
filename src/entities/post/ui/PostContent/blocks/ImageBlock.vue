@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@/src/shared/ui'
+import { BaseContainer } from '@shared/ui'
 import { computed } from 'vue'
 import type { ImageBlock } from '../../../model/types'
 
