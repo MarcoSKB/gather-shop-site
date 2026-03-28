@@ -26,3 +26,13 @@ export interface PreviewProduct {
   image: string
   category: string
 }
+
+export interface ProductFilters {
+  keyword?: string
+}
+
+export interface GetProductListParams {
+  skip?: number
+  take?: number
+  filter?: ProductFilters
+}
