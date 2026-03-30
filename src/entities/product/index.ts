@@ -1,6 +1,7 @@
 export * from './api'
 export type { PreviewProduct } from './model/types'
 export { useFeaturedProducts } from './model/useFeaturedProducts'
+export { useProductBySlug } from './model/useProductBySlug'
 export { useProductKeys } from './model/useProductKeys'
 export { useProductList } from './model/useProductList'
 export { ProductCard, ProductCardSkeleton } from './ui/ProductCard'
