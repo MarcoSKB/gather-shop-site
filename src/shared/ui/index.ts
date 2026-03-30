@@ -1,3 +1,4 @@
+export * from './BaseAccordion'
 export * from './BaseButton'
 export * from './BaseCard'
 export * from './BaseCheckbox'
