@@ -39,15 +39,6 @@ describe('ButtonIcon component', () => {
     expect(button.classes()).toContain('size-10')
   })
 
-  // it('does not apply size classes when size is not md', () => {
-  //   const wrapper = mount(ButtonIcon, {
-  //     props: { size: 'sm' },
-  //   })
-  //   const button = wrapper.find('button')
-
-  //   expect(button.classes()).not.toContain('size-10')
-  // })
-
   it('passes through additional props', () => {
     const wrapper = mount(ButtonIcon, {
       props: { disabled: true },
