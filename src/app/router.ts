@@ -37,6 +37,10 @@ const routes: RouteRecordRaw[] = [
     props: true,
     component: () => import('@pages/ProductDetails'),
   },
+  {
+    path: '/shop/:pathMatch(.*)*',
+    redirect: { name: 'product-list' },
+  },
 ]
 
 const router = createRouter({
