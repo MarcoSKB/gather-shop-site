@@ -23,7 +23,7 @@ defineProps<{
         {{ product.category }}
       </span>
       <span
-        class="font-spectral text-md leading-5 transition-opacity ease-in group-hover:opacity-70 md:text-[17px] md:leading-6"
+        class="font-spectral text-md leading-5 text-balance transition-opacity ease-in group-hover:opacity-70 md:text-[17px] md:leading-6"
       >
         {{ product.title }}
       </span>
