@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import { BaseCard } from '@shared/ui/BaseCard'
-import type { RouteLocationRaw } from 'vue-router'
 import type { PreviewPost } from '../../model/types'
 
 defineProps<{
-  to: RouteLocationRaw
   post: PreviewPost
 }>()
 </script>
 
 <template>
-  <BaseCard :to class="font-spectral w-full gap-3">
+  <BaseCard
+    :to="{ name: 'post-details', params: { slug: post.slug } }"
+    class="font-spectral w-full gap-3"
+  >
     <template #image>
       <img
         :src="post.cover"

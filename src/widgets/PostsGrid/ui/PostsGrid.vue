@@ -15,7 +15,7 @@ const skeletonItems = computed(() => Array.from({ length: 6 }, (_, i) => i))
   <UiState :status="uiStatus">
     <CollectionGrid v-if="posts" :items="posts" :getKey="(post) => post.id">
       <template #default="{ item: post }">
-        <PostCard :to="{ name: 'post-details', params: { slug: post.slug } }" :post="post" />
+        <PostCard :post="post" />
       </template>
     </CollectionGrid>
 
