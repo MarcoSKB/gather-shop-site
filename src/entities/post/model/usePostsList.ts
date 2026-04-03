@@ -1,12 +1,9 @@
 import { useQuery } from '@tanstack/vue-query'
 import { computed } from 'vue'
 import { getPostsList } from '../api'
+import type { GetPostListParams } from './types'
 
-export const usePostsList = ({
-  limit = 6,
-  categoryId,
-  excludePostId,
-}: { limit?: number; categoryId?: string; excludePostId?: string } = {}) => {
+export const usePostsList = ({ limit = 6, categoryId, excludePostId }: GetPostListParams = {}) => {
   const query = useQuery({
     queryKey: ['posts', { limit, categoryId, excludePostId }],
     queryFn: () => getPostsList({ limit, categoryId, excludePostId }),

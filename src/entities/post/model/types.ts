@@ -68,3 +68,9 @@ export interface Post {
 }
 
 export type PreviewPost = Omit<Post, 'blocks' | 'date'>
+
+export interface GetPostListParams {
+  limit?: number
+  categoryId?: string
+  excludePostId?: string
+}
