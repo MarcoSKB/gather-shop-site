@@ -1,5 +1,5 @@
 export * from './api'
-export type { PreviewPost } from './model/types'
+export type { GetPostListParams, PreviewPost } from './model/types'
 export { usePost } from './model/usePost'
 export { usePostsList } from './model/usePostsList'
 export { PostCard, PostCardSkeleton } from './ui/PostCard'

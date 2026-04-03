@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { PostCard, PostCardSkeleton, usePostsList } from '@entities/post'
+import { PostCard, PostCardSkeleton, usePostsList, type GetPostListParams } from '@entities/post'
 import { CollectionGrid, UiState } from '@shared/ui'
 import { computed } from 'vue'
 
 const { params } = defineProps<{
-  params?: {
-    limit?: number
-    categoryId?: string
-    excludePostId?: string
-  }
+  params?: GetPostListParams
 }>()
 
 const { data: posts, uiStatus } = usePostsList(params)
