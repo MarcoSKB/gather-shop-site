@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { BaseLine } from '@shared/ui'
+import { BaseLine, TitledSection } from '@shared/ui'
 import { PostsGrid } from '@widgets/PostsGrid'
-import { TitledSection } from '@widgets/TitledSection'
 </script>
 
 <template>

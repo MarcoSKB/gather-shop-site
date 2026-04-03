@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { PostContent, usePost } from '@entities/post'
-import { UiState } from '@shared/ui'
+import { TitledSection, UiState } from '@shared/ui'
 import { PostsGrid } from '@widgets/PostsGrid'
-import { TitledSection } from '@widgets/TitledSection'
 import PostDetailsSkeleton from './PostDetails.skeleton.vue'
 
 const { slug } = defineProps<{ slug: string }>()

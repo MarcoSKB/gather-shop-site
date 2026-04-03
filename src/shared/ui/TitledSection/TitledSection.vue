@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui'
+import { BaseContainer } from '../BaseContainer'
+
 defineProps<{
   title: string
 }>()
