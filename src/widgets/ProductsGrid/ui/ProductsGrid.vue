@@ -16,10 +16,7 @@ const { data: products, uiStatus } = useProductList(params)
     <TitledSection :title="title">
       <CollectionGrid v-if="products" :items="products" :getKey="(product) => product.id">
         <template #default="{ item: product }">
-          <ProductCard
-            :to="{ name: 'product-details', params: { slug: product.slug } }"
-            :product="product"
-          />
+          <ProductCard :product="product" />
         </template>
       </CollectionGrid>
     </TitledSection>

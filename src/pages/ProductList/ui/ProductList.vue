@@ -35,7 +35,7 @@ watch(
         :key="product.id"
         class="product-item will-change-[transform,opacity]"
       >
-        <ProductCard :to="{ name: 'product-details', params: { slug: product.slug } }" :product />
+        <ProductCard :product />
       </li>
     </ul>
 

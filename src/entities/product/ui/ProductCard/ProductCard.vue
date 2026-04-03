@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import { BaseCard } from '@shared/ui'
-import type { RouteLocationRaw } from 'vue-router'
 import type { PreviewProduct } from '../../model/types'
 
 defineProps<{
-  to: RouteLocationRaw
   product: PreviewProduct
 }>()
 </script>
 
 <template>
-  <BaseCard :to>
+  <BaseCard :to="{ name: 'product-details', params: { slug: product.slug } }">
     <template #image>
       <img
         :src="product.image"
