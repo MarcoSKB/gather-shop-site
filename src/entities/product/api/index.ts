@@ -29,6 +29,10 @@ export const getProductList = async ({
     result = result.filter((product) => product.keys.find((key) => key.toLowerCase() === search))
   }
 
+  if (filter && filter.excludeByProductId) {
+    result = result.filter((product) => product.id !== filter.excludeByProductId)
+  }
+
   const previewProductList = result.map(mapToPreviewProduct)
   return previewProductList.slice(skip, skip + take)
 }

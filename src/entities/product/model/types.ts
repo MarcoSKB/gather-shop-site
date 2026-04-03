@@ -29,6 +29,7 @@ export interface PreviewProduct {
 
 export interface ProductFilters {
   keyword?: string
+  excludeByProductId?: string
 }
 
 export interface GetProductListParams {
