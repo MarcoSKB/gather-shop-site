@@ -3,10 +3,15 @@ import { computed } from 'vue'
 import { getPostsList } from '../api'
 import type { GetPostListParams } from './types'
 
-export const usePostsList = ({ limit = 6, categoryId, excludePostId }: GetPostListParams = {}) => {
+export const usePostsList = ({
+  skip = 0,
+  take = 6,
+  categoryId,
+  excludePostId,
+}: GetPostListParams = {}) => {
   const query = useQuery({
-    queryKey: ['posts', { limit, categoryId, excludePostId }],
-    queryFn: () => getPostsList({ limit, categoryId, excludePostId }),
+    queryKey: ['posts', { skip, take, categoryId, excludePostId }],
+    queryFn: () => getPostsList({ skip, take, categoryId, excludePostId }),
     staleTime: 1000 * 60 * 5,
   })
 

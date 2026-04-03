@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePostsList } from '@entities/post'
 import { BaseContainer, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
-const { data: storyList, uiStatus } = usePostsList({ limit: 6 })
+const { data: storyList, uiStatus } = usePostsList({ take: 6 })
 </script>
 
 <template>
