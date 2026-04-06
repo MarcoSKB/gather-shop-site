@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { Product } from '@entities/product/model/types'
-import { BaseAccordion, BaseButton, BaseSelect } from '@shared/ui'
+import { AddButton } from '@features/add-to-cart'
+import { BaseAccordion, BaseSelect } from '@shared/ui'
 import { ref } from 'vue'
 
 defineProps<{
-  product: Pick<Product, 'price' | 'description' | 'details'>
+  product: Product
 }>()
 
 const quantity = ref(1)
@@ -55,7 +56,7 @@ const quantityOptions = [
         </BaseAccordion>
       </div>
       <BaseSelect v-model="quantity" :options="quantityOptions" />
-      <BaseButton size="lg">Add to Basket</BaseButton>
+      <AddButton :product="product" :quantity />
     </div>
   </div>
 </template>
