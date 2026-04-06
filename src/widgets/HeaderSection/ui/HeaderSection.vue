@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { BaseButton, BaseContainer, ButtonIcon, RouterLink } from '@shared/ui'
-import { Menu, Search, ShoppingBag } from 'lucide-vue-next'
+import { Menu, Search } from 'lucide-vue-next'
 import { ref } from 'vue'
 import { useLogoAnimation } from '../lib/useLogoAnimation'
 import { useHeaderMenu } from '../model/useHeaderMenu'
+import CartModal from './CartModal.vue'
 import HeaderMenuOverlay from './HeaderMenuOverlay.vue'
 
 const logoRef = ref<HTMLImageElement | null>(null)
@@ -34,9 +35,7 @@ const { isOpen, menuRef, toggle, close } = useHeaderMenu()
         />
       </RouterLink>
       <div class="flex w-full items-center justify-end md:max-w-[33%] md:gap-4 lg:gap-10">
-        <ButtonIcon title="Cart">
-          <ShoppingBag />
-        </ButtonIcon>
+        <CartModal />
         <ButtonIcon title="Search">
           <Search />
         </ButtonIcon>
