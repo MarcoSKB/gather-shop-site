@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T extends string | number">
+import { cn } from '@shared/lib'
 import { gsap } from '@shared/lib/gsap'
-import clsx from 'clsx'
 import { ChevronDown } from 'lucide-vue-next'
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 
@@ -46,7 +46,7 @@ onMounted(() => window.addEventListener('click', handleCloseDropdown))
 onUnmounted(() => window.removeEventListener('click', handleCloseDropdown))
 
 const selectButtonStyles = computed(() =>
-  clsx(
+  cn(
     'border-primary flex cursor-pointer group w-full justify-between border px-2.5 py-4',
     className,
   ),

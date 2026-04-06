@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { clsx } from 'clsx'
+import { cn } from '@shared/lib'
 import { computed } from 'vue'
 import { skeletonStyles, type SkeletonVariantsType } from './BaseSkeleton.styles'
 
@@ -10,7 +10,7 @@ type Props = {
 }
 
 const { shape, size, class: className } = defineProps<Props>()
-const skeletonClasses = computed(() => clsx(skeletonStyles({ shape, size }), className))
+const skeletonClasses = computed(() => cn(skeletonStyles({ shape, size }), className))
 </script>
 
 <template>

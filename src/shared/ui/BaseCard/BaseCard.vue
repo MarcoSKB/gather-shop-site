@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import clsx from 'clsx'
+import { cn } from '@shared/lib'
 import { computed } from 'vue'
 import { RouterLink, type RouteLocationRaw } from 'vue-router'
 
@@ -8,7 +8,7 @@ const props = defineProps<{
   to: RouteLocationRaw
 }>()
 
-const cardContentClasses = computed(() => clsx('flex flex-col', props.class))
+const cardContentClasses = computed(() => cn('flex flex-col', props.class))
 </script>
 
 <template>

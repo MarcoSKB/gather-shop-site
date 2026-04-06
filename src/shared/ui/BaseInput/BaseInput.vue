@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import clsx from 'clsx'
+import { cn } from '@shared/lib'
 import { computed } from 'vue'
 import { inputStyles, type InputVariantsType } from './BaseInput.styles'
 
@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { variant, size, ...inputProps } = props
-const inputClasses = computed(() => clsx(inputStyles({ variant, size }), props.class))
+const inputClasses = computed(() => cn(inputStyles({ variant, size }), props.class))
 </script>
 
 <template>

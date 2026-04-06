@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import clsx from 'clsx'
+import { cn } from '@shared/lib'
 import { computed } from 'vue'
 
 const props = defineProps<{
@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 
 const buttonStyles = computed(() =>
-  clsx(
+  cn(
     `before:bg-primary relative z-0 before:absolute before:bottom-0 before:left-0 before:h-px transition-all before:transition-all before:duration-300 before:content-[''] hover:before:w-full active:opacity-50`,
     props.disabled
       ? 'before:w-[100%] pointer-events-none cursor-default'

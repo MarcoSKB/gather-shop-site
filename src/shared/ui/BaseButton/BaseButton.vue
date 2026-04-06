@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { clsx } from 'clsx'
+import { cn } from '@shared/lib'
 import { computed, type ButtonHTMLAttributes } from 'vue'
 import { buttonStyles, type ButtonVariantsType } from './BaseButton.styles'
 
@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { variant, size, ...buttonProps } = props
-const buttonClasses = computed(() => clsx(buttonStyles({ variant, size }), props.class))
+const buttonClasses = computed(() => cn(buttonStyles({ variant, size }), props.class))
 </script>
 
 <template>

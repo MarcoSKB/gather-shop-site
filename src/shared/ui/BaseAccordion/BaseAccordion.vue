@@ -1,6 +1,6 @@
 <script setup lang="ts">
+import { cn } from '@shared/lib'
 import { gsap } from '@shared/lib/gsap'
-import clsx from 'clsx'
 import { Plus } from 'lucide-vue-next'
 import { computed, ref } from 'vue'
 
@@ -11,10 +11,10 @@ type Props = {
 
 const { class: className } = defineProps<Props>()
 const accordionClasses = computed(() =>
-  clsx('w-full overflow-hidden pb-4 text-left text-pretty shadow', className),
+  cn('w-full overflow-hidden pb-4 text-left text-pretty shadow', className),
 )
 const iconClass = computed(() =>
-  clsx('transition-transform ease-in duration-250 size-5', isOpen.value && 'rotate-135'),
+  cn('transition-transform ease-in duration-250 size-5', isOpen.value && 'rotate-135'),
 )
 
 const isOpen = ref(false)
