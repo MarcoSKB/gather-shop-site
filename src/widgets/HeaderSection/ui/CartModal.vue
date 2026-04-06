@@ -2,20 +2,13 @@
 import { useCartStore } from '@entities/cart'
 import { RemoveButton } from '@features/remove-from-cart'
 import { gsap } from '@shared/lib/gsap'
-import { useClickOutside } from '@shared/lib/hooks'
 import { ButtonIcon, RouterLink } from '@shared/ui'
 import { ShoppingBag } from 'lucide-vue-next'
-import { computed, ref, useTemplateRef, type RendererElement } from 'vue'
-
-const isCartOpen = ref(false)
-const cartMenuRef = useTemplateRef<HTMLElement>('cart-menu')
+import { computed, type RendererElement } from 'vue'
+import { useCartInteraction } from '../model/useCartInteraction'
 
 const cartStore = useCartStore()
-useClickOutside(cartMenuRef, () => {
-  if (isCartOpen.value) isCartOpen.value = false
-})
-
-const toggleCart = () => (isCartOpen.value = !isCartOpen.value)
+const { toggleCart, isCartOpen } = useCartInteraction()
 
 const cartEmptyClass = computed(() =>
   cartStore.items.length <= 0
@@ -26,21 +19,24 @@ const cartEmptyClass = computed(() =>
 const onEnter = (el: RendererElement, done: () => void) => {
   gsap.fromTo(
     el,
-    { opacity: 0, y: 0 },
+    { opacity: 0, yPercent: 10 },
     {
-      y: 16,
+      yPercent: 0,
       opacity: 1,
       duration: 0.3,
-      onComplete: done,
+      onComplete: () => {
+        gsap.set(el, { clearProps: 'yPercent,transform' })
+        done()
+      },
     },
   )
 }
 const onLeave = (el: RendererElement, done: () => void) => {
   gsap.fromTo(
     el,
-    { y: 16 },
+    { yPercent: 0 },
     {
-      y: 0,
+      yPercent: 10,
       opacity: 0,
       duration: 0.3,
       onComplete: done,
@@ -59,11 +55,11 @@ const onLeave = (el: RendererElement, done: () => void) => {
       <div
         v-if="isCartOpen"
         ref="cart-menu"
-        class="absolute top-[calc(100%+42px)] left-1/2 -translate-x-1/2 gap-6 border border-black bg-white p-5 md:pr-4"
+        class="absolute top-[calc(100%+12px)] -right-24 flex h-[calc(100dvh-64px)] w-dvw flex-col bg-white p-5 md:top-[calc(100%+24px)] md:left-1/2 md:h-auto md:w-fit md:-translate-x-1/2 md:border md:border-black md:pr-4 lg:top-[calc(100%+42px)]"
       >
         <ul
           v-if="cartStore.items.length > 0"
-          class="mb-5 flex max-h-50 snap-y flex-col gap-5 overflow-y-auto scroll-smooth md:pr-4"
+          class="mb-5 flex max-h-full snap-y flex-col gap-5 overflow-y-auto scroll-smooth md:max-h-50 md:pr-4"
         >
           <li
             v-for="cartItem in cartStore.items"
@@ -73,7 +69,7 @@ const onLeave = (el: RendererElement, done: () => void) => {
             <RouterLink
               :to="{ name: 'product-details', params: { slug: cartItem.slug } }"
               variant="plain"
-              class="block aspect-square w-full max-w-17.5 cursor-pointer transition-opacity ease-in hover:opacity-80"
+              class="block aspect-square w-full max-w-24 cursor-pointer transition-opacity ease-in hover:opacity-80 md:max-w-17.5"
             >
               <img :src="cartItem.image" alt="Product image" class="size-full object-cover" />
             </RouterLink>
@@ -81,7 +77,7 @@ const onLeave = (el: RendererElement, done: () => void) => {
               <RouterLink
                 :to="{ name: 'product-details', params: { slug: cartItem.slug } }"
                 variant="plain"
-                class="font-spectral cursor-pointer text-[12px] leading-4 transition-opacity ease-in hover:opacity-80"
+                class="font-spectral cursor-pointer text-sm leading-4 transition-opacity ease-in hover:opacity-80 md:text-[12px]"
               >
                 {{ cartItem.title }}
               </RouterLink>
@@ -96,7 +92,7 @@ const onLeave = (el: RendererElement, done: () => void) => {
           <span>Subtotal:</span>
           <span>${{ cartStore.getTotalPrice() }}</span>
         </div>
-        <div class="flex gap-3">
+        <div class="md:mt-none mt-auto flex gap-3">
           <RouterLink :to="{ name: 'cart-page' }" variant="tertiary">View Cart</RouterLink>
           <RouterLink :to="{ name: 'cart-page' }" variant="tertiary" :class="cartEmptyClass">
             Checkout
