@@ -38,7 +38,7 @@ export const getProductList = async ({
 }
 
 export const getProductBySlug = async (slug: string) => {
-  await new Promise((resolve) => setTimeout(resolve, 5000))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
   return MOCK_PRODUCTS.find((product) => product.slug === slug)
 }
