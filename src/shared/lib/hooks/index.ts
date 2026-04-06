@@ -1,4 +1,5 @@
 export { useClickOutside } from './useClickOutside'
+export { useLockScroll } from './useLockScroll'
 export { useStaggerAppear } from './useStaggerAppear'
 export { useUrlState } from './useUrlState'
 export { useWindowSize } from './useWindowSize'
