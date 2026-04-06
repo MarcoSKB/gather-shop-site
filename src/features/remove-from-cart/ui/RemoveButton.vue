@@ -11,7 +11,7 @@ const removeFromCart = () => cartStore.remove(id)
 
 <template>
   <button
-    class="font-poppins cursor-pointer text-left font-thin transition-opacity ease-in hover:opacity-80"
+    class="font-poppins text-md cursor-pointer py-2 text-left font-thin transition-opacity ease-in hover:opacity-80 md:py-0 md:text-base"
     @click.stop="removeFromCart"
   >
     Remove
