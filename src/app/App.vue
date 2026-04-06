@@ -10,7 +10,9 @@ initGsap()
 <template>
   <div class="flex min-h-dvh flex-col pt-16 md:pt-0">
     <HeaderSection />
-    <RouterView />
+    <RouterView v-slot="{ Component, route }">
+      <component :is="Component" :key="route.fullPath" />
+    </RouterView>
     <FooterSection />
   </div>
 </template>
