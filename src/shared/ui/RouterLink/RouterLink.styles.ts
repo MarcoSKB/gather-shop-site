@@ -8,7 +8,7 @@ export const linkStyles = cva('aria-[current="page"]:pointer-events-none', {
       secondary:
         'font-spectral text-primary text-nowrap transition-opacity duration-150 ease-in hover:opacity-60',
       tertiary:
-        'text-primary border-primary hover:bg-primary hover:text-inverse font-poppins box-border flex w-full cursor-pointer items-center justify-center border border-solid px-4 py-2 text-base tracking-[2%] text-nowrap transition-colors duration-250 ease-in disabled:cursor-default lg:px-6',
+        'text-primary border-primary hover:bg-primary hover:text-inverse font-poppins box-border flex w-full cursor-pointer items-center justify-center border border-solid px-4 py-2 text-base tracking-[2%] text-nowrap transition-colors duration-250 ease-in lg:px-6',
       plain: '',
     },
     size: {
