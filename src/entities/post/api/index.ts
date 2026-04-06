@@ -3,7 +3,7 @@ import { MOCK_POSTS } from '../model/mocks'
 import type { GetPostListParams } from '../model/types'
 
 export const getPost = async (slug: string) => {
-  await new Promise((resolve) => setTimeout(resolve, 5000))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
   return MOCK_POSTS.find((post) => post.slug === slug)
 }
 
@@ -13,7 +13,7 @@ export const getPostsList = async ({
   categoryId,
   excludePostId,
 }: GetPostListParams = {}) => {
-  await new Promise((resolve) => setTimeout(resolve, 5000))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
   let filtered = [...MOCK_POSTS]
   if (categoryId) {
