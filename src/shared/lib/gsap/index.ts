@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { flyToCart } from './animations/flyToCart'
 
 let initialized = false
 
@@ -9,4 +10,4 @@ export const initGsap = () => {
   initialized = true
 }
 
-export { gsap, ScrollTrigger }
+export { flyToCart, gsap, ScrollTrigger }
