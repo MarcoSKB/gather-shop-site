@@ -1,10 +1,18 @@
 import { gsap, ScrollTrigger } from '@shared/lib/gsap'
-import { nextTick, onMounted, onUnmounted, watch, type Ref } from 'vue'
+import { nextTick, onUnmounted, watch, type Ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
   const route = useRoute()
   let mm: gsap.MatchMedia | null = null
+
+  const killAll = () => {
+    ScrollTrigger.getAll().forEach((t) => t.kill())
+    if (mm) {
+      mm.revert()
+      mm = null
+    }
+  }
 
   const createAnimation = () => {
     if (mm) return
@@ -34,13 +42,17 @@ export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
     })
   }
 
-  const handleRouteExit = () => {
-    if (mm && logoRef.value) {
-      const currentScale = gsap.getProperty(logoRef.value, 'scale')
-      const currentY = gsap.getProperty(logoRef.value, 'y')
+  const handleRouteExit = (isImmediate = false) => {
+    if (!mm && !logoRef.value) return
 
-      ScrollTrigger.getAll().forEach((t) => t.kill())
+    const currentScale = gsap.getProperty(logoRef.value, 'scale')
+    const currentY = gsap.getProperty(logoRef.value, 'y')
 
+    killAll()
+
+    if (isImmediate) {
+      gsap.set(logoRef.value, { scale: 1, y: 0, clearProps: 'all' })
+    } else {
       gsap.fromTo(
         logoRef.value,
         { scale: currentScale, y: currentY },
@@ -48,12 +60,8 @@ export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
           scale: 1,
           y: 0,
           duration: 0.5,
-          overwrite: 'auto',
           ease: 'power2.out',
-          onComplete: () => {
-            mm?.revert()
-            mm = null
-          },
+          clearProps: 'all',
         },
       )
     }
@@ -65,22 +73,30 @@ export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
       await nextTick()
 
       if (path === '/') {
-        if (logoRef.value) {
-          createAnimation()
-        }
+        gsap.to(logoRef.value, {
+          scale: 1.887,
+          y: 134,
+          duration: 0.5,
+          ease: 'power2.out',
+          onComplete: createAnimation,
+        })
       } else {
-        handleRouteExit()
+        handleRouteExit(false)
       }
     },
-    { immediate: true, flush: 'post' },
+    { flush: 'post' },
   )
 
-  onMounted(async () => {
+  const init = async () => {
     await nextTick()
-    if (route.path === '/' && logoRef.value) {
+    if (route.path === '/') {
       createAnimation()
+    } else {
+      handleRouteExit(true)
     }
-  })
+  }
+
+  init()
 
   onUnmounted(() => {
     if (mm) mm.revert()
