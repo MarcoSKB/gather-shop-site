@@ -10,11 +10,9 @@ interface Props extends RouterLinkProps {
   size?: LinkStylesType['size']
 }
 
-const props = defineProps<Props>()
+const { variant, size, class: className, ...props } = defineProps<Props>()
 
-const linkClasses = computed(() =>
-  clsx(linkStyles({ variant: props.variant, size: props.size }), props.class),
-)
+const linkClasses = computed(() => clsx(linkStyles({ variant, size }), className))
 </script>
 
 <template>
