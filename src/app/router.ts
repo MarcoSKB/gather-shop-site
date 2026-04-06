@@ -8,7 +8,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/cart',
-    name: 'cart',
+    name: 'cart-page',
     component: () => import('@pages/Cart'),
   },
   {
