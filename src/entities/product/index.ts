@@ -1,5 +1,5 @@
 export * from './api'
-export type { GetProductListParams, PreviewProduct } from './model/types'
+export type { GetProductListParams, PreviewProduct, Product } from './model/types'
 export { useFeaturedProducts } from './model/useFeaturedProducts'
 export { useProductBySlug } from './model/useProductBySlug'
 export { useProductKeys } from './model/useProductKeys'
