@@ -6,7 +6,7 @@ export const buttonStyles = cva(
     variants: {
       variant: {
         primary:
-          'text-primary border-primary hover:bg-primary hover:text-inverse border border-solid',
+          'text-primary border-primary hover:bg-primary hover:text-inverse disabled:bg-inverse disabled:text-primary border border-solid',
         secondary:
           'bg-primary text-inverse hover:bg-inverse border-primary boder-solid hover:text-primary border',
       },
