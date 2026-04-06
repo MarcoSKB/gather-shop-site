@@ -23,26 +23,22 @@ const menuRef = defineModel<HTMLElement | null>('menuRef')
       >
         <div class="flex flex-col-reverse items-end gap-6 md:flex-row">
           <BaseButton>Subscribe</BaseButton>
-          <nav class="font-spectral flex w-full flex-col gap-5 text-2xl md:gap-8">
-            <ul class="flex flex-col gap-0.5">
+          <nav
+            class="font-spectral divide-primary flex w-full flex-col divide-y divide-solid text-2xl"
+          >
+            <ul
+              v-for="(linksGroup, idx) in menuLinks"
+              :key="idx"
+              class="flex flex-col gap-0.5 not-first:pt-2 not-last:pb-2 md:not-first:pt-4 md:not-last:pb-4"
+            >
               <RouterLink
-                v-for="link in menuLinks[0]"
+                v-for="link in linksGroup"
                 :key="link.href"
                 :to="link.href"
+                @click="onClose"
                 variant="secondary"
                 size="lg"
-              >
-                {{ link.title }}
-              </RouterLink>
-            </ul>
-            <hr />
-            <ul class="flex flex-col gap-0.5">
-              <RouterLink
-                v-for="link in menuLinks[1]"
-                :key="link.href"
-                :to="link.href"
-                variant="secondary"
-                size="lg"
+                class="w-fit aria-[current='page']:pointer-events-auto"
               >
                 {{ link.title }}
               </RouterLink>
