@@ -6,6 +6,7 @@ import type { CartItem } from './types'
 
 export const useCartStore = defineStore('cart', () => {
   const items = ref<CartItem[]>([])
+  const cartIconRef = ref<HTMLElement | null>(null)
 
   const add = (product: Product, quantity: number = 1): void => {
     const isProductExist = items.value.find((item) => item.id === product.id)
@@ -35,5 +36,9 @@ export const useCartStore = defineStore('cart', () => {
     return (id: CartItem['id']) => items.value.some((item) => item.id === id)
   })
 
-  return { items, add, remove, getTotalPrice, isInCart }
+  const setCartIconRef = (el: HTMLElement | null) => {
+    cartIconRef.value = el
+  }
+
+  return { items, add, remove, getTotalPrice, isInCart, cartIconRef, setCartIconRef }
 })
