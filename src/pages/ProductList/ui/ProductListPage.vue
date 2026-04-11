@@ -5,10 +5,8 @@ import ProductList from './ProductList.vue'
 </script>
 
 <template>
-  <section class="min-h-full flex-1">
-    <BaseContainer>
-      <ProductFilter />
-      <ProductList />
-    </BaseContainer>
-  </section>
+  <BaseContainer>
+    <ProductFilter />
+    <ProductList />
+  </BaseContainer>
 </template>

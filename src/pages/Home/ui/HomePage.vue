@@ -13,17 +13,15 @@ import SubscribeFormSection from './SubscribeFormSection.vue'
 </script>
 
 <template>
-  <main class="min-h-full flex-1">
-    <HeroSection />
-    <StoriesSection />
-    <FilmsSection />
-    <PosterSection />
-    <IssueSection />
-    <PostsSection />
-    <AccentSection />
-    <AdsSection />
-    <CollectionSection />
-    <FashionSection />
-    <SubscribeFormSection />
-  </main>
+  <HeroSection />
+  <StoriesSection />
+  <FilmsSection />
+  <PosterSection />
+  <IssueSection />
+  <PostsSection />
+  <AccentSection />
+  <AdsSection />
+  <CollectionSection />
+  <FashionSection />
+  <SubscribeFormSection />
 </template>
