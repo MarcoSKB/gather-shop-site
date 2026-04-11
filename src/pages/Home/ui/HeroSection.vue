@@ -20,9 +20,9 @@ import { BaseContainer, BaseImage } from '@shared/ui'
       >
         The art of elmore
       </h2>
-      <span class="font-spectral text-inverse text-lg leading-7"
-        >An iconic lens on life and style.</span
-      >
+      <span class="font-spectral text-inverse text-lg leading-7">
+        An iconic lens on life and style.
+      </span>
     </BaseContainer>
   </section>
 </template>
