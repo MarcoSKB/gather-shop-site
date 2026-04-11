@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
   const route = useRoute()
   let mm: gsap.MatchMedia | null = null
+  let isFirstLoad = true
 
   const killAll = () => {
     ScrollTrigger.getAll().forEach((t) => t.kill())
@@ -71,6 +72,11 @@ export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
     () => route.path,
     async (path) => {
       await nextTick()
+      if (isFirstLoad) {
+        handleRouteExit(true)
+        isFirstLoad = false
+        return
+      }
 
       if (path === '/') {
         gsap.to(logoRef.value, {
@@ -98,7 +104,5 @@ export const useLogoAnimation = (logoRef: Ref<HTMLImageElement | null>) => {
 
   init()
 
-  onUnmounted(() => {
-    if (mm) mm.revert()
-  })
+  onUnmounted(() => killAll())
 }
