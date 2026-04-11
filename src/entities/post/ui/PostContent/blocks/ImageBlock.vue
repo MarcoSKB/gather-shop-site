@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui'
+import { BaseContainer, BaseImage } from '@shared/ui'
 import { computed } from 'vue'
 import type { ImageBlock } from '../../../model/types'
 
@@ -20,7 +20,7 @@ const captionClass = computed(() =>
 
 <template>
   <figure>
-    <img :src="data.url" :class="imageClass" />
+    <BaseImage :src="data.url" :class="imageClass" />
     <figcaption v-if="data.caption" :class="captionClass">
       <BaseContainer v-if="data.variant == 'default'">
         {{ data.caption }}

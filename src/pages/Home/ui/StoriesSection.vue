@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { usePostsList } from '@entities/post'
-import { BaseContainer, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
+import { BaseContainer, BaseImage, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
 const { data: storyList, uiStatus } = usePostsList({ take: 6 })
 </script>
 
@@ -10,7 +10,7 @@ const { data: storyList, uiStatus } = usePostsList({ take: 6 })
       <div class="flex flex-col-reverse gap-6 md:mb-24 md:flex-row lg:gap-10">
         <div class="w-full md:max-w-[40%] lg:max-w-1/2">
           <div class="flex w-full flex-col md:sticky md:top-23">
-            <img
+            <BaseImage
               src="/assets/images/building.webp"
               alt="Art book preview"
               class="object-contain md:max-h-[50dvh] lg:object-cover"
@@ -37,7 +37,7 @@ const { data: storyList, uiStatus } = usePostsList({ take: 6 })
                   :to="{ name: 'post-details', params: { slug: story.slug } }"
                   variant="plain"
                 >
-                  <img
+                  <BaseImage
                     :src="story.cover"
                     alt="Story preview"
                     class="h-86 w-full object-cover md:max-w-74"

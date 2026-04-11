@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseContainer } from '@shared/ui'
+import { BaseContainer, BaseImage } from '@shared/ui'
 
 defineProps<{
   image: string
@@ -29,7 +29,7 @@ defineProps<{
           <slot name="description"> Description </slot>
         </span>
       </div>
-      <img
+      <BaseImage
         :src="image"
         :alt="imageAlt"
         class="w-full max-w-75 self-center sm:w-[70%] md:max-w-130.25 lg:w-full"

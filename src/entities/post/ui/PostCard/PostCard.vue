@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BaseImage } from '@shared/ui'
 import { BaseCard } from '@shared/ui/BaseCard'
 import type { PreviewPost } from '../../model/types'
 
@@ -13,7 +14,7 @@ defineProps<{
     class="font-spectral w-full gap-3"
   >
     <template #image>
-      <img
+      <BaseImage
         :src="post.cover"
         :alt="`Cover image for ${post.title.toLowerCase()}`"
         class="mb-3 w-full object-cover md:scale-105 md:transition-transform md:duration-250 md:ease-in md:group-hover:scale-100"

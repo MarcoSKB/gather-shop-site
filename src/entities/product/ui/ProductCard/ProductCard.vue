@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseCard } from '@shared/ui'
+import { BaseCard, BaseImage } from '@shared/ui'
 import type { PreviewProduct } from '../../model/types'
 
 defineProps<{
@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <BaseCard :to="{ name: 'product-details', params: { slug: product.slug } }">
     <template #image>
-      <img
+      <BaseImage
         :src="product.image"
         :alt="`Preview image of ${product.title.toLowerCase()}`"
         class="mb-1.5 aspect-square w-full object-cover object-center transition-opacity ease-in group-hover:opacity-95 md:mb-2.5"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useFeaturedProducts } from '@entities/product'
-import { BaseContainer, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
+import { BaseContainer, BaseImage, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
 import { computed, ref } from 'vue'
 import { Carousel, Slide } from 'vue3-carousel'
 import 'vue3-carousel/carousel.css'
@@ -53,7 +53,7 @@ const currentLink = computed(() => {
             <div
               class="carousel__item relative z-0 min-h-70 w-full max-w-137 md:min-h-60 lg:min-h-80"
             >
-              <img
+              <BaseImage
                 :src="product.image"
                 :alt="product.alt"
                 class="absolute top-0 left-0 h-full w-full object-cover object-center"
