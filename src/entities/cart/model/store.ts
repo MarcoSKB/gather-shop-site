@@ -4,41 +4,47 @@ import { computed, ref } from 'vue'
 import { mapProductToCartItem } from '../lib/mappers'
 import type { CartItem } from './types'
 
-export const useCartStore = defineStore('cart', () => {
-  const items = ref<CartItem[]>([])
-  const cartIconRef = ref<HTMLElement | null>(null)
+export const useCartStore = defineStore(
+  'cart',
+  () => {
+    const items = ref<CartItem[]>([])
+    const cartIconRef = ref<HTMLElement | null>(null)
 
-  const add = (product: Product, quantity: number = 1): void => {
-    const isProductExist = items.value.find((item) => item.id === product.id)
+    const add = (product: Product, quantity: number = 1): void => {
+      const isProductExist = items.value.find((item) => item.id === product.id)
 
-    if (isProductExist) {
-      isProductExist.quantity += quantity
-      return
+      if (isProductExist) {
+        isProductExist.quantity += quantity
+        return
+      }
+      const newItem = mapProductToCartItem(product, quantity)
+      items.value.push(newItem)
     }
-    const newItem = mapProductToCartItem(product, quantity)
-    items.value.push(newItem)
-  }
 
-  const remove = (id: CartItem['id']): boolean => {
-    const isProductExist = items.value.find((item) => item.id === id)
+    const remove = (id: CartItem['id']): boolean => {
+      const isProductExist = items.value.find((item) => item.id === id)
 
-    if (!isProductExist) return false
+      if (!isProductExist) return false
 
-    items.value = items.value.filter((item) => item.id !== id)
-    return true
-  }
+      items.value = items.value.filter((item) => item.id !== id)
+      return true
+    }
 
-  const getTotalPrice = (): number => {
-    return items.value.reduce((acc, { quantity, price }) => acc + quantity * price, 0)
-  }
+    const getTotalPrice = (): number => {
+      return items.value.reduce((acc, { quantity, price }) => acc + quantity * price, 0)
+    }
 
-  const isInCart = computed(() => {
-    return (id: CartItem['id']) => items.value.some((item) => item.id === id)
-  })
+    const isInCart = computed(() => {
+      return (id: CartItem['id']) => items.value.some((item) => item.id === id)
+    })
 
-  const setCartIconRef = (el: HTMLElement | null) => {
-    cartIconRef.value = el
-  }
+    const setCartIconRef = (el: HTMLElement | null) => {
+      cartIconRef.value = el
+    }
 
-  return { items, add, remove, getTotalPrice, isInCart, cartIconRef, setCartIconRef }
-})
+    return { items, add, remove, getTotalPrice, isInCart, cartIconRef, setCartIconRef }
+  },
+  {
+    persist: ['items'],
+  },
+)
