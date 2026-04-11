@@ -6,11 +6,13 @@ interface Props {
   src: string
   alt?: string
   class?: string
-  loading?: 'lazy' | 'eager'
+  loading?: ImgHTMLAttributes['loading']
   fetchpriority?: ImgHTMLAttributes['fetchpriority']
 }
 
-const { class: className, ...imgProps } = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  loading: 'lazy',
+})
 
 const isLoaded = ref(false)
 const isError = ref(false)
@@ -31,7 +33,7 @@ onMounted(() => {
   }
 })
 
-const imageStyles = computed(() => cn('relative overflow-hidden bg-inverse z-0', className))
+const imageStyles = computed(() => cn('relative overflow-hidden bg-inverse z-0', props.class))
 </script>
 
 <template>
@@ -44,12 +46,11 @@ const imageStyles = computed(() => cn('relative overflow-hidden bg-inverse z-0',
 
     <img
       ref="imgRef"
-      v-bind="imgProps"
+      v-bind="props"
       @load="handleLoad"
       @error="handleError"
       class="h-full w-full object-cover transition-opacity duration-500 ease-in-out"
       :class="isLoaded ? 'opacity-100' : 'opacity-0'"
-      loading="lazy"
     />
   </div>
 </template>
