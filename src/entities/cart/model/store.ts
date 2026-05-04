@@ -34,6 +34,14 @@ export const useCartStore = defineStore(
       return items.value.reduce((acc, { quantity, price }) => acc + quantity * price, 0)
     }
 
+    const setQuantity = (id: CartItem['id'], quantity: number): void => {
+      const isProductExist = items.value.find((item) => item.id === id)
+
+      if (isProductExist) {
+        isProductExist.quantity = quantity
+      }
+    }
+
     const isInCart = computed(() => {
       return (id: CartItem['id']) => items.value.some((item) => item.id === id)
     })
@@ -42,7 +50,7 @@ export const useCartStore = defineStore(
       cartIconRef.value = el
     }
 
-    return { items, add, remove, getTotalPrice, isInCart, cartIconRef, setCartIconRef }
+    return { items, add, remove, setQuantity, getTotalPrice, isInCart, cartIconRef, setCartIconRef }
   },
   {
     persist: ['items'],
