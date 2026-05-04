@@ -8,7 +8,7 @@ import { BaseContainer, BaseImage } from '@shared/ui'
   >
     <div class="absolute top-0 z-[-1] h-full w-full overflow-hidden md:pt-24">
       <BaseImage
-        src="/assets/images/hero-1.webp"
+        src="assets/images/hero-1.webp"
         alt="Watercolor painting with people"
         class="pointer-events-none relative left-1/2 h-full w-full max-w-480 -translate-x-1/2 object-cover object-top"
         fetchpriority="high"

@@ -28,7 +28,7 @@ const { isOpen, menuRef, toggle, close } = useHeaderMenu()
         class="flex w-full items-center md:max-w-[33%] md:justify-center"
       >
         <img
-          src="/assets/images/logo.svg"
+          src="assets/images/logo.svg"
           alt="Elmore logotype"
           ref="logoRef"
           class="w-full max-w-60 origin-center will-change-transform lg:max-w-75"
