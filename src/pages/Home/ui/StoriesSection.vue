@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePostsList } from '@entities/post'
+import { BASE_URL } from '@shared/lib'
 import { BaseContainer, BaseImage, BaseSkeleton, RouterLink, UiState } from '@shared/ui'
 const { data: storyList, uiStatus } = usePostsList({ take: 6 })
 </script>
@@ -11,7 +12,7 @@ const { data: storyList, uiStatus } = usePostsList({ take: 6 })
         <div class="w-full md:max-w-[40%] lg:max-w-1/2">
           <div class="flex w-full flex-col md:sticky md:top-23">
             <BaseImage
-              src="assets/images/building.webp"
+              :src="BASE_URL + 'assets/images/building.webp'"
               alt="Art book preview"
               class="object-contain md:max-h-[50dvh] lg:object-cover"
             />

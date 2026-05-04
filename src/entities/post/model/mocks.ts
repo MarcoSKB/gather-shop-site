@@ -1,3 +1,4 @@
+import { BASE_URL } from '@shared/lib'
 import { type Post } from './types'
 
 export const MOCK_POSTS: Post[] = [
@@ -8,7 +9,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'A new exhibition at Kinfolk’s Case Study Room in Tokyo.',
     category: 'CULTURE',
     date: '2026-03-10',
-    cover: 'content/posts/kuniom-aekawa/cover.webp',
+    cover: `${BASE_URL}content/posts/kuniom-aekawa/cover.webp`,
     blocks: [
       {
         id: 'b1',
@@ -17,7 +18,7 @@ export const MOCK_POSTS: Post[] = [
           title: 'KUNIOM AEKAWA',
           category: 'ARTS & CULTURE, DESIGN',
           subtitle: 'A new exhibition at Kinfolk’s Case Study Room in Tokyo.',
-          url: 'content/posts/kuniom-aekawa/header.webp',
+          url: `${BASE_URL}content/posts/kuniom-aekawa/header.webp`,
         },
       },
       {
@@ -28,7 +29,7 @@ export const MOCK_POSTS: Post[] = [
             id: 'lb1',
             type: 'image',
             data: {
-              url: 'content/posts/kuniom-aekawa/editorial-01.webp',
+              url: `${BASE_URL}content/posts/kuniom-aekawa/editorial-01.webp`,
               variant: 'default',
               caption:
                 'Nilsson wears a coat by WE11DONE, shoes by MAISON MARTIN MARGIELA, rings by J. HANNAH, an ear cuff by FARIS, vintage socks, her own earrings and the stylist’s own necklace.',
@@ -38,7 +39,7 @@ export const MOCK_POSTS: Post[] = [
             id: 'rb1',
             type: 'image',
             data: {
-              url: 'content/posts/kuniom-aekawa/editorial-02.webp',
+              url: `${BASE_URL}content/posts/kuniom-aekawa/editorial-02.webp`,
               variant: 'small',
               caption: 'She wears a dress by MELITTA BAUMEISTER and earrings by PANCONESI.',
             },
@@ -105,7 +106,7 @@ export const MOCK_POSTS: Post[] = [
         id: 'b9',
         type: 'image',
         data: {
-          url: 'content/posts/kuniom-aekawa/banner.webp',
+          url: `${BASE_URL}content/posts/kuniom-aekawa/banner.webp`,
           variant: 'default',
           caption:
             'Nilsson wears a jacket and skirt by WE11DONE, earrings by SOPHIE BUHAI and rings by J. HANNAH.',
@@ -119,7 +120,7 @@ export const MOCK_POSTS: Post[] = [
             id: 'b11',
             type: 'image',
             data: {
-              url: 'content/posts/kuniom-aekawa/editorial-03.webp',
+              url: `${BASE_URL}content/posts/kuniom-aekawa/editorial-03.webp`,
               variant: 'default',
               caption:
                 'Nilsson wears a suit and boots by IRO, rings by J. HANNAH, ear cuff by FARIS, a vintage top, her own earrings and the stylist’s own necklace.',
@@ -129,7 +130,7 @@ export const MOCK_POSTS: Post[] = [
             id: 'b12',
             type: 'image',
             data: {
-              url: 'content/posts/kuniom-aekawa/editorial-04.webp',
+              url: `${BASE_URL}content/posts/kuniom-aekawa/editorial-04.webp`,
               variant: 'small',
               caption: 'She wears a dress by MELITTA BAUMEISTER and earrings by PANCONESI.',
             },
@@ -204,7 +205,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'The pop star reflects on the big feelings behind her biggest hits.',
     category: 'MUSIC, ISSUE 49',
     date: '2026-03-10',
-    cover: 'content/posts/tove-lo/cover.webp',
+    cover: `${BASE_URL}content/posts/tove-lo/cover.webp`,
     blocks: [],
   },
   {
@@ -214,7 +215,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'A saturnine mélange of subversive styles.',
     category: 'FASHION, ISSUE 49',
     date: '2026-03-10',
-    cover: 'content/posts/urban-doom/cover.webp',
+    cover: `${BASE_URL}content/posts/urban-doom/cover.webp`,
     blocks: [],
   },
   {
@@ -224,7 +225,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'The Danish arts writer finding clarity between the lines.',
     category: 'ARTS & CULTURE',
     date: '2026-03-10',
-    cover: 'content/posts/amalie-smith/cover.webp',
+    cover: `${BASE_URL}content/posts/amalie-smith/cover.webp`,
     blocks: [],
   },
   {
@@ -234,7 +235,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'Inside the moody, mysterious world of Sweden’s preeminent painter.',
     category: 'ARTS & CULTURE',
     date: '2026-03-10',
-    cover: 'content/posts/karin-mamma-andersson/cover.webp',
+    cover: `${BASE_URL}content/posts/karin-mamma-andersson/cover.webp`,
     blocks: [],
   },
   {
@@ -244,7 +245,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'The shape-shifting actor is on a roll.',
     category: 'FILMS, ISSUE 49',
     date: '2026-03-10',
-    cover: 'content/posts/mamoudou-athie/cover.webp',
+    cover: `${BASE_URL}content/posts/mamoudou-athie/cover.webp`,
     blocks: [],
   },
   {
@@ -254,7 +255,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'The songwriter turning quiet confessions into global anthems.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/gracie-abrams/cover.webp',
+    cover: `${BASE_URL}content/posts/gracie-abrams/cover.webp`,
     blocks: [],
   },
   {
@@ -264,7 +265,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'A bold collision of retro futurism and underground edge.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/neon-revival/cover.webp',
+    cover: `${BASE_URL}content/posts/neon-revival/cover.webp`,
     blocks: [],
   },
   {
@@ -274,7 +275,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'Exploring identity and memory through experimental prose.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/luca-holm/cover.webp',
+    cover: `${BASE_URL}content/posts/luca-holm/cover.webp`,
     blocks: [],
   },
   {
@@ -284,7 +285,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'The painter blending Nordic landscapes with surreal narratives.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/elin-nystrom/cover.webp',
+    cover: `${BASE_URL}content/posts/elin-nystrom/cover.webp`,
     blocks: [],
   },
   {
@@ -294,7 +295,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'From teen idol to complex leading man.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/jacob-elordi/cover.webp',
+    cover: `${BASE_URL}content/posts/jacob-elordi/cover.webp`,
     blocks: [],
   },
   {
@@ -304,7 +305,7 @@ export const MOCK_POSTS: Post[] = [
     subtitle: 'Balancing indie film roles with a rising music career.',
     category: 'CULTURE',
     date: '2026-04-02',
-    cover: 'content/posts/maya-hawke/cover.webp',
+    cover: `${BASE_URL}content/posts/maya-hawke/cover.webp`,
     blocks: [],
   },
 ]

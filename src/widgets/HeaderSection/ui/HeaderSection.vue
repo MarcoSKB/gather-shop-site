@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { BASE_URL } from '@shared/lib'
 import { BaseButton, BaseContainer, ButtonIcon, RouterLink } from '@shared/ui'
 import { Menu, Search } from 'lucide-vue-next'
 import { ref } from 'vue'
@@ -28,7 +29,7 @@ const { isOpen, menuRef, toggle, close } = useHeaderMenu()
         class="flex w-full items-center md:max-w-[33%] md:justify-center"
       >
         <img
-          src="assets/images/logo.svg"
+          :src="BASE_URL + 'assets/images/logo.svg'"
           alt="Elmore logotype"
           ref="logoRef"
           class="w-full max-w-60 origin-center will-change-transform lg:max-w-75"

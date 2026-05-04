@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { BASE_URL } from '@shared/lib'
 import { BaseLine } from '@shared/ui'
 import { HighlightSection } from '@widgets/HighlightSection'
 </script>
 
 <template>
   <BaseLine />
-  <HighlightSection image="assets/images/fashion.webp" imageAlt="Woman walking to the right">
+  <HighlightSection
+    :image="BASE_URL + 'assets/images/fashion.webp'"
+    imageAlt="Woman walking to the right"
+  >
     <template #subtitle> FASHION </template>
     <template #title>
       URBAN <br class="hidden sm:inline" />
