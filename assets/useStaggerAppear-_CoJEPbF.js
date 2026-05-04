@@ -1,1 +1,0 @@
-import{Q as i,i as r}from"./index-CCUDv1Kp.js";const u=(a,o)=>({animate:async()=>{await i();const t=a.value;if(!t)return;const e=t.querySelectorAll(o);e.length&&(r.killTweensOf(e),r.fromTo(e,{opacity:0,y:20},{opacity:1,y:0,duration:.7,stagger:.1,ease:"power2.out",overwrite:!0}))}});export{u};
