@@ -9,6 +9,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueJsx(), vueDevTools(), tailwindcss()],
+  base: '/gather-shop-site/',
   resolve: {
     alias: {
       '@assets': fileURLToPath(new URL('./public/assets', import.meta.url)),
