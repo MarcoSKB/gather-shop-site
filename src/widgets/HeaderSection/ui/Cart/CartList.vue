@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CartItem } from '@entities/cart/model/types'
 import { RemoveButton } from '@features/remove-from-cart'
-import { RouterLink } from '@shared/ui'
+import { BaseImage, RouterLink } from '@shared/ui'
 import { listAnimation } from './CartDropdown.animations'
 
 defineProps<{
@@ -35,7 +35,7 @@ defineProps<{
           variant="plain"
           class="block aspect-square w-full max-w-24 cursor-pointer transition-opacity ease-in hover:opacity-80 md:max-w-17.5"
         >
-          <img :src="cartItem.image" alt="Product image" class="size-full object-cover" />
+          <BaseImage :src="cartItem.image" alt="Product image" class="size-full object-cover" />
         </RouterLink>
         <div class="flex flex-col text-[12px] leading-4">
           <RouterLink
